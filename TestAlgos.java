@@ -21,7 +21,7 @@ public class TestAlgos {
 	 * @param seed
 	 * @param trialNumber
 	 * @param algoType
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static String writeFile;
 	public static String path;
@@ -35,13 +35,11 @@ public class TestAlgos {
 	 * @throws IOException
 	 */
 	public static void displayResults(String seed, int trialNumber, int algoType, ArrayList<String>res) throws IOException {
-		
-		
 		 String str = "";
 		 String algType="";
 		 if(algoType==0) {algType="initAlgo";}
 		 else {algType="Unknown Algorithm";}
-		 
+
 		 str=str+algType+"\nTrial No. = "+trialNumber+"\nStringanalyzed"+seed+"\nNumber of results: "+res.size()+ "\nResults:\n";
 		 for(int i=0;i < res.size();i++) {
 			 str=str+res.get(i);
@@ -50,13 +48,13 @@ public class TestAlgos {
 			 }
 		 }
 		 str=str+"end of result.\n\n\n";
-		 
+
 		 writer.write(str);
 	}
 	/**
 	 * Test everything
 	 * @param args
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException  {
 		path = "C:\\Users\\jpd\\Documents\\tortoiseSVNProjects\\JavaProjectForInterview\\workingCopy\\tenStrProj\\";
@@ -82,9 +80,7 @@ public class TestAlgos {
 		        e.printStackTrace();
 		    }
 		}
-		
-		
-		
+
 		for(int i=0;i<testVals.size();i++) {
 			Algo a=new InitAlgo(testVals.get(i));
 			a.implementAlgo();
@@ -93,15 +89,6 @@ public class TestAlgos {
 		}
 
 		 writer.close();
-		
-//		Algo iA=new InitAlgo("1231111234231512351235123564551adfpaoisdfpoaihdpaosdhf");
-//		iA.implementAlgo();
-//		ArrayList<String> res=iA.getResults();
-//		test("1231111234231512351235123564551adfpaoisdfpoaihdpaosdhf",0,0,res);
-		
-		
-		
 
-		
 	}
 }

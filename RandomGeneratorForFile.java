@@ -6,11 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class RandomGeneratorForFile {
-	
+
 	public static void main(String[] args) throws IOException {
 		String path = "C:\\Users\\jpd\\Documents\\tortoiseSVNProjects\\JavaProjectForInterview\\workingCopy\\tenStrProj\\";
 		String fName="testValuesInitAlgo.txt";
-		
+
 		int trials = 1000;
 		int length = 75;
 		String[] values=new String[trials];
@@ -21,10 +21,10 @@ public class RandomGeneratorForFile {
 				values[i]=values[i]+r;
 			}
 		}
-		
-		
+
+
 		BufferedWriter bw = null;
-		
+
 			String str ="";
 			for(int i=0;i<trials;i++) {
 				str=str+values[i];
@@ -32,8 +32,8 @@ public class RandomGeneratorForFile {
 			}
 			//Specify the file name and path here
 			File file = new File(path+fName);
-			
-			/* This logic will make sure that the file 
+
+			/* This logic will make sure that the file
 			 * gets created if it is not present at the
 			 * specified location*/
 			if (!file.exists()) {
@@ -44,7 +44,7 @@ public class RandomGeneratorForFile {
 			bw = new BufferedWriter(fw);
 			bw.write(str);
 			System.out.println("File written Successfully");
-			
+
 			bw.close();
 	}
 }
